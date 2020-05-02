@@ -1,14 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignUpFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/colorPrimaryDark">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="45dp"
+            android:src="@drawable/cross" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="124dp"
+            android:layout_height="97dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="135dp"
+            android:layout_marginTop="66dp"
+            android:layout_marginEnd="151dp"
+            android:src="@drawable/grablogo" />
+
+        <LinearLayout
+            android:id="@+id/linear_layout_2"
+            android:layout_width="315dp"
+            android:layout_height="292dp"
+            android:layout_below="@+id/imageView5"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="47dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/registername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/white"
+                android:ems="10"
+                android:hint="Enter Full Name"
+                android:inputType="textPersonName"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/registerEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/white"
+                android:ems="10"
+                android:hint="Enter Email ID"
+                android:inputType="textEmailAddress"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/registerpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/white"
+                android:ems="10"
+                android:hint="Enter Password"
+                android:inputType="textPassword"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/confirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/white"
+                android:ems="10"
+                android:hint="Retype your Password"
+                android:inputType="textPassword"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/signInButton"
+                android:text="Sign Up"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar3"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linear_layout_2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="192dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="184dp"
+            android:indeterminateTint="@color/signInButton" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="120dp"
+            android:layout_height="1dp"
+            android:layout_below="@+id/progressBar3"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="18dp"
+            android:background="@android:color/white" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="120dp"
+            android:layout_height="1dp"
+            android:layout_below="@+id/progressBar3"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="56dp"
+            android:background="@android:color/white" />
+
+        <TextView
+            android:id="@+id/or"
+            android:layout_width="26dp"
+            android:layout_height="21dp"
+            android:layout_below="@+id/progressBar3"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="4dp"
+            android:layout_toStartOf="@+id/divider4"
+            android:layout_toEndOf="@+id/divider3"
+            android:text="or"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/login_textview"
+            android:layout_width="238dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/or"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="119dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="54dp"
+            android:text="Already Have an Account? Sign In"
+            android:textColor="@android:color/white"
+            android:textSize="10sp" />
+
+    </RelativeLayout>
 
 </FrameLayout>
