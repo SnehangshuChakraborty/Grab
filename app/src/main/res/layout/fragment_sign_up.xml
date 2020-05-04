@@ -55,7 +55,7 @@
                 android:hint="Enter Full Name"
                 android:inputType="textPersonName"
                 android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white"
+                android:textColorHint="@android:color/darker_gray"
                 android:textSize="20sp" />
 
             <EditText
@@ -67,7 +67,7 @@
                 android:hint="Enter Email ID"
                 android:inputType="textEmailAddress"
                 android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white"
+                android:textColorHint="@android:color/darker_gray"
                 android:textSize="20sp" />
 
             <EditText
@@ -79,7 +79,7 @@
                 android:hint="Enter Password"
                 android:inputType="textPassword"
                 android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white"
+                android:textColorHint="@android:color/darker_gray"
                 android:textSize="20sp" />
 
             <EditText
@@ -91,16 +91,17 @@
                 android:hint="Retype your Password"
                 android:inputType="textPassword"
                 android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white"
+                android:textColorHint="@android:color/darker_gray"
                 android:textSize="20sp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/sign_up_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:background="@color/signInButton"
                 android:text="Sign Up"
+                android:enabled="false"
                 android:textAllCaps="false"
                 android:textSize="20sp" />
 
@@ -167,5 +168,4 @@
             android:textSize="10sp" />
 
     </RelativeLayout>
-
 </FrameLayout>

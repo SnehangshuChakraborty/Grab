@@ -89,8 +89,8 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="200dp"
-            android:layout_marginEnd="200dp"
-            android:layout_marginBottom="109dp"
+            android:layout_marginEnd="176dp"
+            android:layout_marginBottom="115dp"
             android:text="Or"
             android:textColor="@android:color/white" />
 
