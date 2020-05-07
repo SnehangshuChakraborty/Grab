@@ -1,5 +1,6 @@
 package com.example.grab;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -145,6 +147,7 @@ public class SignUpFragment extends Fragment {
                     if(!TextUtils.equals(registerPassword.getText(),confirmPassword.getText())){
                         signUpButton.setEnabled(true);
                     }else{
+                        Toast.makeText(getActivity().getApplicationContext(), "Password Not Matched", Toast.LENGTH_SHORT).show();
                         signUpButton.setEnabled(false);
                     }
                 }else{
@@ -159,6 +162,9 @@ public class SignUpFragment extends Fragment {
     }
 
     private void sendDataToFirebase() {
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(getActivity().getApplicationContext() , "Details Submitted", duration);
+        toast.show();
     }
 
     private void validateInputs() {

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "174503311662",
+    "firebase_url": "https://grab-b5061.firebaseio.com",
+    "project_id": "grab-b5061",
+    "storage_bucket": "grab-b5061.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174503311662:android:7397e017d1d573ee1562bf",
+        "android_client_info": {
+          "package_name": "com.example.grab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174503311662-9g61ad2fname44qhnajcm2j05r6h303q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.grab",
+            "certificate_hash": "4a8473579d8e99c7613935442dda606e7e1b5987"
+          }
+        },
+        {
+          "client_id": "174503311662-i7qt10rlvtqotl5959m1kacied0k5rk2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArXFu3r-Okpz3_c3dEoJOuSi_I6rDRnts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174503311662-i7qt10rlvtqotl5959m1kacied0k5rk2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
