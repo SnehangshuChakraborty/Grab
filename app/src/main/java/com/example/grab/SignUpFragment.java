@@ -141,7 +141,7 @@ public class SignUpFragment extends Fragment {
     }
 
     private void checkInput() {
-        if(!TextUtils.isEmpty(registerEmailId.getText())){
+        /*if(!TextUtils.isEmpty(registerEmailId.getText())){
             if(!TextUtils.isEmpty(registerName.getText())){
                 if(!TextUtils.isEmpty(registerPassword.getText()) && registerPassword.length() >=8){
                     if(!TextUtils.equals(registerPassword.getText(),confirmPassword.getText())){
@@ -158,7 +158,7 @@ public class SignUpFragment extends Fragment {
             }
         }else{
             signUpButton.setEnabled(false);
-        }
+        }*/
     }
 
     private void sendDataToFirebase() {
