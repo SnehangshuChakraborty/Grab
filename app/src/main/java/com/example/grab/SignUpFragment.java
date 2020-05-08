@@ -25,6 +25,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -41,6 +46,7 @@ public class SignUpFragment extends Fragment {
     private EditText confirmPassword;
     private Button signUpButton;
     private FirebaseAuth firebaseAuth;
+    private FirebaseFirestore firebaseFirestore;
 
     public SignUpFragment() {
         // Required empty public constructor
@@ -58,6 +64,7 @@ public class SignUpFragment extends Fragment {
         parentFramelayout = getActivity().findViewById(R.id.framelayout);
         signUpButton = view.findViewById(R.id.sign_up_button);
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
         return view;
     }
 
@@ -175,9 +182,25 @@ public class SignUpFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Intent intent = new Intent(getActivity(),HomeScreenActivity.class);
-                            startActivity(intent);
-                            getActivity().finish();
+                            Map<Object,String> userData = new HashMap<>();
+                            userData.put("fullname", registerName.getText().toString());
+
+                            firebaseFirestore.collection("USERS")
+                                    .add(userData)
+                                    .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<DocumentReference> task) {
+                                            if(task.isSuccessful()){
+                                                Intent intent = new Intent(getActivity(),HomeScreenActivity.class);
+                                                startActivity(intent);
+                                                getActivity().finish();
+                                            }
+                                            else{
+                                                String Err = task.getException().toString();
+                                                Toast.makeText(getActivity().getApplicationContext(), Err, Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    });
                         }
                         else{
                             String Error = task.getException().toString();
