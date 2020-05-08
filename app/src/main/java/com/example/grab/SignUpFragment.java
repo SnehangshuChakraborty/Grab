@@ -1,6 +1,7 @@
 package com.example.grab;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,11 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,6 +40,7 @@ public class SignUpFragment extends Fragment {
     private EditText registerPassword;
     private EditText confirmPassword;
     private Button signUpButton;
+    private FirebaseAuth firebaseAuth;
 
     public SignUpFragment() {
         // Required empty public constructor
@@ -50,6 +57,7 @@ public class SignUpFragment extends Fragment {
         confirmPassword = view.findViewById(R.id.confirmPassword);
         parentFramelayout = getActivity().findViewById(R.id.framelayout);
         signUpButton = view.findViewById(R.id.sign_up_button);
+        firebaseAuth = FirebaseAuth.getInstance();
         return view;
     }
 
@@ -162,9 +170,19 @@ public class SignUpFragment extends Fragment {
     }
 
     private void sendDataToFirebase() {
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(getActivity().getApplicationContext() , "Details Submitted", duration);
-        toast.show();
+        firebaseAuth.createUserWithEmailAndPassword(registerEmailId.getText().toString(),registerPassword.getText().toString())
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+
+                        }
+                        else{
+                            String Error = task.getException().toString();
+                            Toast.makeText(getActivity().getApplicationContext(), Error, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 
     private void validateInputs() {
