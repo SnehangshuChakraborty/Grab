@@ -175,7 +175,9 @@ public class SignUpFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-
+                            Intent intent = new Intent(getActivity(),HomeScreenActivity.class);
+                            startActivity(intent);
+                            getActivity().finish();
                         }
                         else{
                             String Error = task.getException().toString();
