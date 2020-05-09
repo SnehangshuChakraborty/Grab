@@ -184,6 +184,7 @@ public class SignUpFragment extends Fragment {
                         if(task.isSuccessful()){
                             Map<Object,String> userData = new HashMap<>();
                             userData.put("fullname", registerName.getText().toString());
+                            userData.put("password",registerPassword.getText().toString());
 
                             firebaseFirestore.collection("USERS")
                                     .add(userData)
@@ -221,3 +222,5 @@ public class SignUpFragment extends Fragment {
         fragmentTransaction.commit();
     }
 }
+
+
